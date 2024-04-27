@@ -17,9 +17,9 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '主页', link: '/zh/' },
-          { text: '快速开始', link: '/zh/init' },
-          { text: '插件开发', link: '/zh/init/quick' },
-          { text: '高级配置', link: '/zh/init/quick' },
+          { text: '快速开始', link: '/zh/init/' },
+          { text: '插件开发', link: '/zh/init/' },
+          { text: '高级配置', link: '/zh/init/' },
         ],
         sidebar: [
           {

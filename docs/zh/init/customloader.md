@@ -37,21 +37,22 @@
   <ItemGroup>
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230913002" />
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
-      <PackageReference Include="ShadowPluginLoader.WinUI" Version="1.0.2" />  // [!code highlight]
+      <PackageReference Include="ShadowPluginLoader.WinUI" Version="<填写最新版本>" />  // [!code highlight]
   </ItemGroup>
 	
 </Project>
 ```
+
+其中: 
+- `ShadowPluginLoader.WinUI` 是我们必须的依赖库
+  - 最新版本为: [![NuGet version (ShadowPluginLoader.WinUI)](https://img.shields.io/nuget/v/ShadowPluginLoader.WinUI?style=flat-square)](https://www.nuget.org/packages/ShadowPluginLoader.WinUI/)
+- `GeneratePackageOnBuild`设置为`true`将会自动在构建时打包为`nuget`包
 
 ::: tip
 - `<!-- Nuget -->` 下方的是生成`nuget`包的一些设置
 - 关于`MSBuild`中`nuget`的生成可以查看该文章:[使用 MSBuild 创建 NuGet 包](https://learn.microsoft.com/zh-cn/nuget/create-packages/creating-a-package-msbuild)
 - 一些可以使用的MSBuild属性可以查看该文章:[包目标](https://learn.microsoft.com/zh-cn/nuget/reference/msbuild-targets#pack-target)
 :::
-
-其中: 
-- `ShadowPluginLoader.WinUI` 是我们必须的依赖库
-- `GeneratePackageOnBuild`设置为`true`将会自动在构建时打包为`nuget`包
 
 创建完项目之后,我们可以直接`构建`一下,在本目录会出现一个`Tools.Config.props`文件
 
@@ -73,7 +74,7 @@
 
 你的`PluginLoader`库作为给本体和所有插件提供插件信息的部分(可以称为`SDK`),应当包含以下内容:
 
-- 插件元数据类
-- 插件基类
+- [插件元数据类](/zh/init/metaplugin)
+- [插件基类](/zh/init/iplugin)
+- [插件加载器类](/zh/init/customloaderclass)
 - 插件加载逻辑
-- 插件加载器类

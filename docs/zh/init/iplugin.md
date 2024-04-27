@@ -1,6 +1,6 @@
 # 创建插件基类
 
-::: tip
+:::  warning 注意
 
 你应当先设计[插件元数据](/zh/init/metaplugin),再来设置插件基类
 
