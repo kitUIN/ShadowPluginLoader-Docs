@@ -21,11 +21,11 @@ public class ExampleMetaData : AbstractPluginMetaData
 
 你的元数据类**必须**使用`ExportMeta`
 
-会自动导出为define文件给后续的插件使用
+会自动导出为`元数据定义文件`给后续的插件使用
 
 ::: tip 说明
 
-关于define文件,可查阅:
+关于`元数据定义文件`,可查阅: [元数据定义文件](/zh/advance/define)
 
 :::
 

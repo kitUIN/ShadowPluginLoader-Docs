@@ -18,21 +18,22 @@
     <RootNamespace>ShadowExample.Core</RootNamespace>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
-	<NoWarn>MSB3277</NoWarn>
+	  <NoWarn>MSB3277</NoWarn>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies> // [!code highlight]
 
-	<!-- Nuget -->  // [!code highlight]
-	<Version>1.0.0.34</Version>  // [!code highlight]
-	<PackageId>ShadowExample.Core</PackageId>  // [!code highlight]
-	<Authors>kitUIN</Authors>  // [!code highlight]
-	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>  // [!code highlight]
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>  // [!code highlight]
-	<PackageProjectUrl>https://github.com/kitUIN/ShadowPluginLoader.WinUI</PackageProjectUrl>  // [!code highlight]
-	<RepositoryUrl>https://github.com/kitUIN/ShadowPluginLoader.WinUI</RepositoryUrl>  // [!code highlight]
-	<Description>✨ ShadowExample.Core ✨</Description>  // [!code highlight]
-	<Copyright>Copyright 2024</Copyright>  // [!code highlight]
-	<PackageTags>kitUIN;wasdk;plugin-loader;plugin;extension;winui</PackageTags>  // [!code highlight]
-	<PackageOutputPath>..\NugetPackages</PackageOutputPath>  // [!code highlight]
-	<!-- <PackageReadmeFile>README.md</PackageReadmeFile> -->  // [!code highlight]
+    <!-- Nuget -->  // [!code highlight]
+    <Version>1.0.0.34</Version>  // [!code highlight]
+    <PackageId>ShadowExample.Core</PackageId>  // [!code highlight]
+    <Authors>kitUIN</Authors>  // [!code highlight]
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>  // [!code highlight]
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>  // [!code highlight]
+    <PackageProjectUrl>https://github.com/kitUIN/ShadowPluginLoader.WinUI</PackageProjectUrl>  // [!code highlight]
+    <RepositoryUrl>https://github.com/kitUIN/ShadowPluginLoader.WinUI</RepositoryUrl>  // [!code highlight]
+    <Description>✨ ShadowExample.Core ✨</Description>  // [!code highlight]
+    <Copyright>Copyright 2024</Copyright>  // [!code highlight]
+    <PackageTags>kitUIN;wasdk;plugin-loader;plugin;extension;winui</PackageTags>  // [!code highlight]
+    <PackageOutputPath>..\NugetPackages</PackageOutputPath>  // [!code highlight]
+    <!-- <PackageReadmeFile>README.md</PackageReadmeFile> -->  // [!code highlight]
   </PropertyGroup>
  
 
@@ -46,6 +47,7 @@
 ```
 
 其中: 
+- `CopyLocalLockFileAssemblies`是导出依赖库中的文件,这是为了防止预生成元数据时找不到对应的库
 - `ShadowPluginLoader.WinUI` 是我们必须的依赖库
   - 最新版本为: [![NuGet version (ShadowPluginLoader.WinUI)](https://img.shields.io/nuget/v/ShadowPluginLoader.WinUI?style=flat-square)](https://www.nuget.org/packages/ShadowPluginLoader.WinUI/)
 - `GeneratePackageOnBuild`设置为`true`将会自动在构建时打包为`nuget`包
@@ -68,6 +70,13 @@
 
 创建完项目之后,我们可以直接`构建`一下,在本目录会出现一个`Tools.Config.props`文件
 
+::: tip 说明
+
+关于`Tools.Config.props`文件,可查阅: [Tools.Config.props](/zh/advance/toolconfig)
+
+:::
+
+
 将其中的`<IsPluginLoader>`设置为`true`,标明本项目是一个插件加载器项目
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -79,6 +88,8 @@
         <IsPlugin>false</IsPlugin>
         <!-- Auto Pack Plugin -->
         <AutoPluginPackage>true</AutoPluginPackage>
+        <!-- Auto Generate I18N -->
+        <AutoGenerateI18N>true</AutoGenerateI18N>
     </PropertyGroup>
 </Project>
 ```
@@ -89,4 +100,5 @@
 - [插件元数据类](/zh/init/metaplugin)
 - [插件基类](/zh/init/iplugin)
 - [插件加载器类](/zh/init/customloaderclass)
-- 插件加载逻辑
+- 自定义插件加载逻辑
+- 使用`I18N`(国际化)

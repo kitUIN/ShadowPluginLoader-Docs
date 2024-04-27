@@ -13,3 +13,5 @@
 - [创建插件元数据类](/zh/init/metaplugin)
 - [创建插件基类](/zh/init/iplugin)
 - [创建插件加载器类](/zh/init/customloaderclass)
+- [自定义插件加载逻辑](/zh/advance/customloadplugin)
+- [使用`I18N`(国际化)](/zh/advance/i18n)
