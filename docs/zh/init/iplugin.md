@@ -20,7 +20,7 @@ public abstract class PluginBase: AbstractPlugin
 ```
 
 必要条件:
-- 你的插件基类须为`abstract class`
-- 你的插件基类必须继承`AbstractPlugin`
+- 插件基类须为`abstract class`
+- 插件基类必须继承`AbstractPlugin`
 
 `AbstractPlugin`中默认设置了一些函数,你可以在此基础上增改

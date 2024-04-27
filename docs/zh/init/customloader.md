@@ -60,7 +60,7 @@
 - `PackageTags`即为nuget包的标签
 - `PackageOutputPath`即为nuget包的输出路径
 
-::: tip
+::: tip 说明
 - `<!-- Nuget -->` 下方的是生成`nuget`包的一些设置
 - 关于`MSBuild`中`nuget`的生成可以查看该文章:[使用 MSBuild 创建 NuGet 包](https://learn.microsoft.com/zh-cn/nuget/create-packages/creating-a-package-msbuild)
 - 一些可以使用的MSBuild属性可以查看该文章:[包目标](https://learn.microsoft.com/zh-cn/nuget/reference/msbuild-targets#pack-target)
@@ -84,7 +84,7 @@
 ```
 ## 内容
 
-你的`PluginLoader`库作为给本体和所有插件提供插件信息的部分(可以称为`SDK`),应当包含以下内容:
+你的`PluginLoader`库(可以称为`SDK`)需要给给本体和所有插件提供插件信息,应当包含以下内容:
 
 - [插件元数据类](/zh/init/metaplugin)
 - [插件基类](/zh/init/iplugin)

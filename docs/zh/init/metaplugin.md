@@ -25,7 +25,7 @@ public class ExampleMetaData : AbstractPluginMetaData
 
 ::: tip 说明
 
-想了解define文件,可以查阅:
+关于define文件,可查阅:
 
 :::
 
@@ -41,20 +41,20 @@ public class ExampleMetaData : AbstractPluginMetaData
 
 所以以上四个你不需要设置
 
-### 额外的元数据属性
+### 额外的元数据项
 
-在上文的示例中,我们新增了一个元数据属性`Author`
+在上文的示例中,我们新增了一个元数据项`Author`
 
 ```csharp
 public string Author { get; init; }
 ```
 ::: warning 注意
 
-所有的元数据都需要使用属性访问器(get/init)
+所有的元数据项都需要使用属性访问器(get/init)
 
 :::
 
-### 元数据属性的额外配置
+### 元数据项的额外配置
 
 ```csharp
     [Meta(Required = true, PropertyGroupName = "Author")]
@@ -62,7 +62,7 @@ public string Author { get; init; }
 ```
 在上文中,我们使用了`Meta`特性
 
-该特性用于配置我们的元数据属性
+该特性用于配置我们的元数据项
 
 | 可配置项       |      类型      |  默认值 | 说明 |
 | ------------- | :-----------: | ---- | ---- |
