@@ -13,7 +13,7 @@ using ShadowPluginLoader.WinUI;
 
 namespace ShadowExample.Core.Plugins;
 
-public abstract class AIExamplePlugin: APlugin
+public abstract class PluginBase: AbstractPlugin
 {
     public abstract string GetEmoji();
 }
@@ -21,6 +21,6 @@ public abstract class AIExamplePlugin: APlugin
 
 必要条件:
 - 你的插件基类须为`abstract class`
-- 你的插件基类必须继承`APlugin`
+- 你的插件基类必须继承`AbstractPlugin`
 
-`APlugin`中默认设置了一些函数,你可以在此基础上增改
+`AbstractPlugin`中默认设置了一些函数,你可以在此基础上增改

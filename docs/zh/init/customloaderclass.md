@@ -16,7 +16,7 @@ using ShadowPluginLoader.WinUI;
 
 namespace ShadowExample.Core
 {
-    public class ShadowExamplePluginLoader : APluginLoader<ExampleMetaData, IExamplePlugin>
+    public class ShadowExamplePluginLoader : AbstractPluginLoader<ExampleMetaData, IExamplePlugin>
     {
         public ShadowExamplePluginLoader(ILogger logger) : base(logger)
         {
@@ -46,15 +46,16 @@ namespace ShadowExample.Core;
 public static class DiFactory
 {
     public static Container Services { get; }
-    static DiFactory()
+     static DiFactory()
     {
         Services = new Container(rules => rules.With(FactoryMethod.ConstructorWithResolvableArguments));
         Services.Register(
             Made.Of(() => Serilog.Log.ForContext(Arg.Index<Type>(0)), r => r.Parent.ImplementationType),
             setup: Setup.With(condition: r => r.Parent.ImplementationType != null));
-        APluginLoader<ExampleMetaData, AExamplePlugin>.Services = Services; // 设置插件加载器的Services
-        Services.Register<ShadowExamplePluginLoader>(reuse: Reuse.Singleton); // 注册插件加载器
+        AbstractPluginLoader<ExampleMetaData, PluginBase>.Services = Services;
+        Services.Register<ShadowExamplePluginLoader>(reuse: Reuse.Singleton);
     }
+
 
 }
 ```
