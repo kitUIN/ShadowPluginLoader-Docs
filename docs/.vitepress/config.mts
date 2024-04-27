@@ -38,10 +38,12 @@ export default defineConfig({
             link: '/',
             base: '/zh/plugin/',
             items: [
+              { text: '创建插件项目', link: 'create' },
               { text: '插件主类', link: 'main' },
-              { text: 'I18N国际化', link: 'i18n' },
-              { text: '元数据定义文件', link: 'define' },
-              { text: 'Tool.Config.props文件', link: 'toolconfig' },
+              { text: '自定义控件', link: 'control' },
+              { text: '自定义资源字典', link: 'resourcedictionary' },
+              { text: '自定义资源文件', link: 'assets' },
+              { text: '插件打包', link: 'pack' },
             ]
           },
           {
