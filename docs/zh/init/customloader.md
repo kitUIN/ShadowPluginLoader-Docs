@@ -4,6 +4,8 @@
 
 我们首先需要在`VS`中新建一个`WinUI`类库
 
+本文以名为`ShadowExample.Core`的项目为例
+
 ![winui](/init/winui.png)
 
 创建完成后,打开`.csproj`文件,添加以下代码
@@ -47,6 +49,16 @@
 - `ShadowPluginLoader.WinUI` 是我们必须的依赖库
   - 最新版本为: [![NuGet version (ShadowPluginLoader.WinUI)](https://img.shields.io/nuget/v/ShadowPluginLoader.WinUI?style=flat-square)](https://www.nuget.org/packages/ShadowPluginLoader.WinUI/)
 - `GeneratePackageOnBuild`设置为`true`将会自动在构建时打包为`nuget`包
+- `Version`即为程序/nuget的版本号
+- `PackageId`即为nuget包的包名
+- `Authors`即为nuget包的作者
+- `PackageLicenseExpression`即为nuget包的许可证
+- `PackageProjectUrl`即为nuget包的项目地址
+- `RepositoryUrl`即为nuget包的仓库地址
+- `Description`即为nuget包的描述
+- `Copyright`即为nuget包的版权
+- `PackageTags`即为nuget包的标签
+- `PackageOutputPath`即为nuget包的输出路径
 
 ::: tip
 - `<!-- Nuget -->` 下方的是生成`nuget`包的一些设置
