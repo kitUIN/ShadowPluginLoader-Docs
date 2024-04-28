@@ -37,6 +37,7 @@ namespace ShadowExample.Core
 所以我们先要创建依赖注入,必须使用`DryIoc`这个库来依赖注入
 
 以下是一个简单示例,更多请查阅`DryIoc`文档:
+
 ```csharp
 using System;
 using DryIoc;
@@ -46,7 +47,7 @@ namespace ShadowExample.Core;
 public static class DiFactory
 {
     public static Container Services { get; }
-     static DiFactory()
+    static DiFactory()
     {
         Services = new Container(rules => rules.With(FactoryMethod.ConstructorWithResolvableArguments));
         Services.Register(
@@ -60,6 +61,17 @@ public static class DiFactory
 }
 ```
 
+## 在主项目中使用
+
+在`App.cs`文件中需要初始化
+
+```csharp
+public App()
+{
+    this.InitializeComponent();
+    ApplicationExtensionHost.Initialize(this); // [!code ++]
+}
+```
 
 ## 自定义插件加载过程
 

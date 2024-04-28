@@ -8,21 +8,22 @@
 // 示例
 public LoginTip()
 {
-    InitializeComponent();
+    this.InitializeComponent();
 }
 ```
 但是在插件中默认的`InitializeComponent()`无法正常加载
 
 所以我们要改为
 ```csharp
-using CustomExtensions.WinUI;
+using CustomExtensions.WinUI; // [!code ++]
 public LoginTip()
 {
-     this.LoadComponent(ref _contentLoaded);
+    this.InitializeComponent(); // [!code --]
+    this.LoadComponent(ref _contentLoaded); // [!code ++]
 }
 ```
 
-这样就能正常识别插件的Xaml内容,并载入了
+这样就能正常识别与载入插件的Xaml内容
 
 ::: warning 注意
 

@@ -56,7 +56,6 @@ export default defineConfig({
             base: '/zh/plugin/',
             items: [
               { text: '创建插件项目', link: 'create' },
-              { text: '插件主类', link: 'main' },
               { text: '自定义控件', link: 'control' },
               { text: '自定义资源字典', link: 'resourcedictionary' },
               { text: '自定义资源文件', link: 'assets' },
