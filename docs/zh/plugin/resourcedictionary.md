@@ -1,6 +1,6 @@
 # 自定义资源字典
 
-### 资源字典规则
+## 资源字典规则
 
 一般来说,我们会将一些常用的`Color`,`Style`塞到一个`theme.xaml`中
 
@@ -23,6 +23,6 @@ public override IEnumerable<string> ResourceDictionaries => new List<string>
 
 这样会在插件加载进入的时候资源字典会自动合并到`App.xaml`
 
-### 编写
+## 编写
 
 其余用法与普通WinUI项目一致

@@ -38,7 +38,7 @@ namespace ShadowViewer.Plugin.Local
 ```
 你可以直接使用`LocalPlugin.Meta`来获取插件的元数据信息
 
-### 后续编写
+## 后续编写
 
 接下来,你可以选择覆写插件基类中的默认方法
 

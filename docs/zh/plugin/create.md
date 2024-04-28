@@ -4,7 +4,7 @@
 
 ![winui](/init/winui.png)
 
-### 编写默认元数据
+## 编写默认元数据
 
 默认提供了四个元数据项
 - `Id`:插件Id
@@ -56,7 +56,7 @@
     <PackageReference Include="ShadowExample.Plugin.World" Version="1.3.0.0" />
 </ItemGroup>
 ```
-### 编写数组形式的元数据项
+## 编写数组形式的元数据项
 
 有一些元数据项的类型为数组,例如:`string[]`
 
@@ -74,7 +74,7 @@
     </Authors>
   ```
 
-### 编写更多元数据项
+## 编写更多元数据项
 
 在你的插件加载器中应当设置了自己的元数据项
 

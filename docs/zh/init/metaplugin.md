@@ -15,7 +15,7 @@ public class ExampleMetaData : AbstractPluginMetaData
 }
 ```
 
-### 导出元数据
+## 导出元数据
 
 `ExportMeta`特性指明这个类是需要导出的元数据
 
@@ -29,7 +29,7 @@ public class ExampleMetaData : AbstractPluginMetaData
 
 :::
 
-### 继承
+## 继承
 
 你的元数据类**必须**继承`AbstractPluginMetaData`
   
@@ -41,7 +41,7 @@ public class ExampleMetaData : AbstractPluginMetaData
 
 所以以上四个你不需要设置
 
-### 额外的元数据项
+## 额外的元数据项
 
 在上文的示例中,我们新增了一个元数据项`Author`
 
@@ -55,7 +55,7 @@ public string Author { get; init; }
 
 :::
 
-### 元数据项的额外配置
+## 元数据项的额外配置
 
 ```csharp
     [Meta(Required = true, PropertyGroupName = "Author")]

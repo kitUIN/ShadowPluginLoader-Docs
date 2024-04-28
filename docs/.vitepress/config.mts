@@ -15,6 +15,9 @@ export default defineConfig({
       lang: 'zh',
       link: '/zh/',
       themeConfig: {
+        outline: {
+          label: '页面导航'
+        },
         lastUpdated: {
           text: '最后更新',
         },
