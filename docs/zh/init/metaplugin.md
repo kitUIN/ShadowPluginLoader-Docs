@@ -37,7 +37,7 @@ public class ExampleMetaData : AbstractPluginMetaData
 - `Id`:插件Id
 - `Name`:插件名称
 - `Version`:插件版本
-- `Dependencies`:插件描述
+- `Dependencies`:插件依赖
 
 所以以上四个你不需要设置
 
@@ -50,7 +50,8 @@ public string Author { get; init; }
 ```
 ::: warning 注意
 
-所有的元数据项都需要使用属性访问器(get/init)
+- 所有的元数据项都需要使用属性访问器(get/init)
+- 元数据项的类型必须在该列表中: [支持的元数据项类型](/zh/advance/meta#支持的元数据项类型)
 
 :::
 
@@ -72,11 +73,5 @@ public string Author { get; init; }
 | `Regex` |   `string?`    |    `null` |  正则表达式,用于匹配该属性的值 |
 | `PropertyGroupName` |   `string`    | 属性名称 |  元数据的对应的`MSBuild`名称 |
 
-::: warning 注意
-
-请注意`PropertyGroupName`和`元数据属性`不要与`MSBuild`预留的名称冲突
-
-是否冲突可以查阅该文档: [MSBuild 保留属性和已知属性](https://learn.microsoft.com/zh-cn/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022)
-:::
 
 

@@ -11,20 +11,20 @@
   "Type": "PluginMetaData",
   "Properties": {
     "Id": {
-      "Type": "String",
-      "PropertyGroupName": "PackageId"
+      "Type": "string",
+      "PropertyGroupName": "Id"
     },
     "Name": {
-      "Type": "String",
-      "PropertyGroupName": "PluginName"
+      "Type": "string",
+      "PropertyGroupName": "Name"
     },
     "Version": {
-      "Type": "String",
+      "Type": "string",
       "PropertyGroupName": "Version",
       "Regex":"^[0-9]+\.[0-9]+\.[0-9]+$"
     },
     "Dependencies": {
-      "Type": "String[]",
+      "Type": "string[]",
       "PropertyGroupName": "Dependencies"
     }
   },
@@ -39,6 +39,6 @@
 | 名称       |      类型       | 说明 |
 | ------------- | :-----------:  | ---- |
 | `Namespace`      | `string`  | 元数据类所在的命名空间 |
-| `Type`      |   `string`    |  元数据类名 |
+| `Type`      |   `string`    |  元数据类名,[支持的元数据项类型](/zh/advance/meta#支持的元数据项类型) |
 | `Properties` |   `Object`     |  元数据项,具体可配置项可查阅[`[Meta]`特性](/zh/init/metaplugin.html#元数据项的额外配置) |
 | `Required` |   `string[]`    |  必须填写的元数据项 |

@@ -54,6 +54,7 @@ export default defineConfig({
               { text: '自定义插件加载逻辑', link: 'customloadplugin' },
               { text: 'I18N国际化', link: 'i18n' },
               { text: '元数据定义文件', link: 'define' },
+              { text: '元数据项编写格式', link: 'meta' },
               { text: 'Tool.Config.props文件', link: 'toolconfig' },
             ]
           }
