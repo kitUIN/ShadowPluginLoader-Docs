@@ -11,10 +11,24 @@ export default defineConfig({
       
     },
     zh: {
-      label: 'Chinese',
+      label: '简体中文',
       lang: 'zh',
       link: '/zh/',
       themeConfig: {
+        lastUpdated: {
+          text: '最后更新',
+        },
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇'
+        },
+        langMenuLabel:"切换语言",
+        returnToTopLabel:"返回顶部",
+        sidebarMenuLabel:"菜单",
+        darkModeSwitchTitle:"切换到深色主题",
+        lightModeSwitchTitle:"切换到浅色主题",
+        darkModeSwitchLabel:"主题",
+
         nav: [
           { text: '主页', link: '/zh/' },
           { text: '快速开始', link: '/zh/init/' },
