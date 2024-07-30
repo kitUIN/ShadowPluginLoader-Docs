@@ -12,7 +12,9 @@
         <IsPluginLoader>false</IsPluginLoader>
         <!-- Whether the current project is a Plugin -->
         <IsPlugin>true</IsPlugin> // [!code focus]
-        <!-- Auto Pack Plugin -->
+        <!-- Whether the current project is a built-in Plugin -->
+        <BuiltIn>false</BuiltIn>
+        <!-- Auto Pack Plugin When IsPlugin == True-->
         <AutoPluginPackage>true</AutoPluginPackage> // [!code focus]
         <!-- Auto Generate I18N -->
         <AutoGenerateI18N>true</AutoGenerateI18N>
@@ -38,13 +40,26 @@
 
 例如:
 ```txt
-/Fluent/*
-/hello.*
+Fluent/*
+hello.*
 ```
 
 仅能使用
 - `?` 通配一个字符
 - `*` 通配多个字符
 
-这样`Fluent`文件夹和名为`hello`的文件都不会被打包
+这样在输出文件夹内的`Fluent`文件夹和名为`hello`的文件都不会被打包
 
+如果你想排除文件夹下所有子目录中的某个文件
+
+应当使用
+
+```txt
+core/*text.txt 
+```
+
+不要使用
+
+```txt
+core/**/text.txt 
+```

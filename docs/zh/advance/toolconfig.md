@@ -11,7 +11,9 @@
         <IsPluginLoader>false</IsPluginLoader>
         <!-- Whether the current project is a Plugin -->
         <IsPlugin>false</IsPlugin>
-        <!-- Auto Pack Plugin -->
+        <!-- Whether the current project is a built-in Plugin -->
+        <BuiltIn>false</BuiltIn>
+        <!-- Auto Pack Plugin When IsPlugin == True-->
         <AutoPluginPackage>true</AutoPluginPackage>
         <!-- Auto Generate I18N -->
         <AutoGenerateI18N>true</AutoGenerateI18N>
@@ -23,6 +25,7 @@
 | ------------- | :-----------:  | ---- |
 | `IsPluginLoader`      | `bool`  | 该项目是否是插件加载器项目,详见[IsPluginLoader](#IsPluginLoader) |
 | `IsPlugin`      |   `bool`    |  该项目是否是插件项目,详见[IsPlugin](#IsPlugin) |
+| `BuiltIn`      |   `bool`    |  该项目是否是内置插件项目,详见[BuiltInPlugin](#BuiltInPlugin) |
 | `AutoPluginPackage` |   `bool`     |  是否自动打包为插件(仅在`IsPlugin`为`true`时有效),详见[插件打包](/zh/plugin/pack) |
 | `AutoGenerateI18N` |   `bool`    |  是否自动生成I18N帮助类,详见[I18N国际化](/zh/advance/i18n) |
 
@@ -47,3 +50,10 @@
 如果为`true`:
 - 从`.csproj`文件中自动生成出`plugin.json`
 - 允许使用[插件打包](/zh/plugin/pack)功能
+
+## BuiltInPlugin
+
+`BuiltIn`指明该项目是否是内置插件项目
+
+内置插件:
+- 直接以项目依赖,一同打包进主项目中的插件
