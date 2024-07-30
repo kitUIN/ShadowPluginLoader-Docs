@@ -101,4 +101,4 @@
 - [插件基类](/zh/init/iplugin)
 - [插件加载器类](/zh/init/customloaderclass)
 - 自定义插件加载逻辑
-- 使用`I18N`(国际化)
+- [使用I18N(国际化)](/zh/advance/i18n)
