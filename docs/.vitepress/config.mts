@@ -8,7 +8,12 @@ export default defineConfig({
     root: {
       label: 'English',
       lang: 'en',
-      
+      themeConfig: {
+        editLink: {
+          pattern: 'https://github.com/kitUIN/ShadowPluginLoader-Docs/edit/main/docs/:path',
+          text: 'Edit this page on GitHub'
+        }
+      }
     },
     zh: {
       label: '简体中文',
@@ -57,6 +62,7 @@ export default defineConfig({
             items: [
               { text: '创建插件项目', link: 'create' },
               { text: '自定义控件', link: 'control' },
+              { text: '插件资源路径', link: 'msplugin' },
               { text: '自定义资源字典', link: 'resourcedictionary' },
               { text: '自定义资源文件', link: 'assets' },
               { text: '插件打包', link: 'pack' },
@@ -78,7 +84,11 @@ export default defineConfig({
     
         socialLinks: [
           { icon: 'github', link: 'https://github.com/kitUIN/ShadowPluginLoader.WinUI' }
-        ]
+        ],
+        editLink: {
+          pattern: 'https://github.com/kitUIN/ShadowPluginLoader-Docs/edit/main/docs/:path',
+          text: '在Github上编辑此页'
+        }
       },
     }
   }

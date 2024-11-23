@@ -6,18 +6,7 @@
 
 我们需要一些方法来修改载入的路径,让程序正确识别
 
-```xml
-xmlns:ce="using:CustomExtensions.WinUI"
-```
-```xml
-<Image Source="{ce:PluginImage Source=/Assets/th.jpg}" />
-```
+[Xaml使用方式](/zh/plugin/msplugin.html#在-xaml-中使用)
 
-如果想在程序里使用:
-```csharp
-using CustomExtensions.WinUI;
-var image = new Image()
-{
-    Source = "/Assets/Picacgs/picacomic_2.png".AssetPath(),
-};
-```
+[代码中使用方式](/zh/plugin/msplugin.html#代码中使用)
+
