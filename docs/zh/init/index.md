@@ -5,6 +5,7 @@
 - 了解`WinUI3(Windows App SDK)`的开发
 - 掌握`C#`与`Xaml`
 - 安装`.NET 6.0 SDK`
+- 依赖注入必须使用[DryIoc](https://github.com/dadhi/DryIoc)
 
 ## 流程
 
