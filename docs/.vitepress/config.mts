@@ -67,6 +67,7 @@ export default defineConfig({
               { text: '自定义资源文件', link: 'assets' },
               { text: '插件设置项', link: 'settings' },
               { text: '插件打包', link: 'pack' },
+              { text: '插件事件', link: 'event' },
             ]
           },
           {
