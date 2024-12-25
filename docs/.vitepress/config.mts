@@ -65,6 +65,7 @@ export default defineConfig({
               { text: '插件资源路径', link: 'msplugin' },
               { text: '自定义资源字典', link: 'resourcedictionary' },
               { text: '自定义资源文件', link: 'assets' },
+              { text: '插件设置项', link: 'settings' },
               { text: '插件打包', link: 'pack' },
             ]
           },
