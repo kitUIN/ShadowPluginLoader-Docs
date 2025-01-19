@@ -40,24 +40,26 @@ namespace ShadowExample.Core
 
 ```csharp
 using System;
-using DryIoc;
+using SqlSugar;
 
-namespace ShadowExample.Core;
+namespace ShadowViewer.Helpers;
 
-public static class DiFactory
+/// <summary>
+/// 依赖注入帮助类
+/// </summary>
+public static class DiHelper
 {
-    public static Container Services { get; }
-    static DiFactory()
-    {
-        Services = new Container(rules => rules.With(FactoryMethod.ConstructorWithResolvableArguments));
-        Services.Register(
-            Made.Of(() => Serilog.Log.ForContext(Arg.Index<Type>(0)), r => r.Parent.ImplementationType),
-            setup: Setup.With(condition: r => r.Parent.ImplementationType != null));
-        AbstractPluginLoader<ExampleMetaData, PluginBase>.Services = Services;
-        Services.Register<ShadowExamplePluginLoader>(reuse: Reuse.Singleton);
+    /// <summary>
+    /// 初始化DI
+    /// </summary>
+    public static void Init()
+    {  
+        DiFactory.Services.Register<INotifyService, NotifyService>(Reuse.Singleton);
+        DiFactory.Services.Register<PluginLoader>(reuse: Reuse.Singleton);
+        DiFactory.Services.Register<ICallableService, CallableService>(Reuse.Singleton);
+        DiFactory.Services.Register<CompressService>(Reuse.Singleton);
+        DiFactory.Services.Register<ResponderService>(Reuse.Singleton);
     }
-
-
 }
 ```
 
