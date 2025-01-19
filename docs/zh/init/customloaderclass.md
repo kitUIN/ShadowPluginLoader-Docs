@@ -21,6 +21,7 @@ namespace ShadowExample.Core
 
         /// <inheritdoc />
         protected override string PluginFolder => Config.PluginsPath; // 应当换成你的插件文件夹路径
+        
         /// <inheritdoc />
         protected override string TempFolder => Config.TempPath; // 应当换成你的临时文件夹路径
 
