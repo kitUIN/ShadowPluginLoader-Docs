@@ -54,11 +54,7 @@ public static class DiHelper
     /// </summary>
     public static void Init()
     {  
-        DiFactory.Services.Register<INotifyService, NotifyService>(Reuse.Singleton);
         DiFactory.Services.Register<PluginLoader>(reuse: Reuse.Singleton);
-        DiFactory.Services.Register<ICallableService, CallableService>(Reuse.Singleton);
-        DiFactory.Services.Register<CompressService>(Reuse.Singleton);
-        DiFactory.Services.Register<ResponderService>(Reuse.Singleton);
     }
 }
 ```
@@ -71,7 +67,8 @@ public static class DiHelper
 public App()
 {
     this.InitializeComponent();
-    ApplicationExtensionHost.Initialize(this); // [!code ++]
+    ApplicationExtensionHost.Initialize(this); //初始化反射加载器 // [!code ++]
+    DiHelper.Init(); // 初始化依赖注入 // [!code ++]
 }
 ```
 
@@ -81,4 +78,4 @@ public App()
 
 我们可以覆写默认的加载逻辑
 
-详见[自定义插件加载逻辑]/zh/advance/customloadplugin
+详见[自定义插件加载逻辑](/zh/advance/customloadplugin)
