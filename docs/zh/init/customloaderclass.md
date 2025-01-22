@@ -18,6 +18,13 @@ namespace ShadowExample.Core
 {
     public class ShadowExamplePluginLoader : AbstractPluginLoader<ExampleMetaData, IExamplePlugin>
     {
+
+        /// <inheritdoc />
+        protected override string PluginFolder => Config.PluginsPath; // 应当换成你的插件文件夹路径
+        
+        /// <inheritdoc />
+        protected override string TempFolder => Config.TempPath; // 应当换成你的临时文件夹路径
+
         public ShadowExamplePluginLoader(ILogger logger) : base(logger)
         {
         }
@@ -40,24 +47,22 @@ namespace ShadowExample.Core
 
 ```csharp
 using System;
-using DryIoc;
+using SqlSugar;
 
-namespace ShadowExample.Core;
+namespace ShadowViewer.Helpers;
 
-public static class DiFactory
+/// <summary>
+/// 依赖注入帮助类
+/// </summary>
+public static class DiHelper
 {
-    public static Container Services { get; }
-    static DiFactory()
-    {
-        Services = new Container(rules => rules.With(FactoryMethod.ConstructorWithResolvableArguments));
-        Services.Register(
-            Made.Of(() => Serilog.Log.ForContext(Arg.Index<Type>(0)), r => r.Parent.ImplementationType),
-            setup: Setup.With(condition: r => r.Parent.ImplementationType != null));
-        AbstractPluginLoader<ExampleMetaData, PluginBase>.Services = Services;
-        Services.Register<ShadowExamplePluginLoader>(reuse: Reuse.Singleton);
+    /// <summary>
+    /// 初始化DI
+    /// </summary>
+    public static void Init()
+    {  
+        DiFactory.Services.Register<PluginLoader>(reuse: Reuse.Singleton);
     }
-
-
 }
 ```
 
@@ -69,7 +74,8 @@ public static class DiFactory
 public App()
 {
     this.InitializeComponent();
-    ApplicationExtensionHost.Initialize(this); // [!code ++]
+    ApplicationExtensionHost.Initialize(this); //初始化反射加载器 // [!code ++]
+    DiHelper.Init(); // 初始化依赖注入 // [!code ++]
 }
 ```
 
@@ -79,4 +85,4 @@ public App()
 
 我们可以覆写默认的加载逻辑
 
-详见[自定义插件加载逻辑]/zh/advance/customloadplugin
+详见[自定义插件加载逻辑](/zh/advance/customloadplugin)
