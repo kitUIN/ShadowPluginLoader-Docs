@@ -71,7 +71,7 @@ public string Author { get; init; }
 | `Exclude`      |   `bool`   |   `false` | 是否忽略该属性,忽略后该属性不会被导出到define文件中 |
 | `Regex` |   `string?`    |    `null` |  正则表达式,用于匹配该属性的值 |
 | `PropertyGroupName` |   `string`    | 属性名称 |  元数据的对应的`MSBuild`名称,大小写敏感 |
-| ~~`Nullable`~~ |   `bool`    |   `false` |  ~~是否允许该属性为`null`~~通过类名是否有问号自动判断 |
+| ~~`Nullable`~~ |   ~~`bool`~~    |   ~~`false`~~ |  ~~是否允许该属性为`null`~~ 通过类名是否有问号自动判断 |
 
 
 
