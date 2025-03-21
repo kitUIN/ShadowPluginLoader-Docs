@@ -81,6 +81,8 @@ export default defineConfig({
               { text: '元数据定义文件', link: 'define' },
               { text: '元数据项编写格式', link: 'meta' },
               { text: 'Tool.Config.props文件', link: 'toolconfig' },
+              { text: '快速依赖注入', link: 'quickdi' },
+              { text: '修补plugin.json', link: 'patchpluginjson' },
             ]
           }
         ],
