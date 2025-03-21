@@ -18,27 +18,17 @@
 | `defaultVal`  | `string` | 默认值     |
 | `comment`     | `string` | 备注       |
 
-## 自动注入属性
-
-使用 `ShadowPluginSettingClass` 注解来自动注入到插件主类的属性
-
-参数说明:
-
-| 参数            |   类型   | 描述                    |
-| --------------- | :------: | ----------------------- |
-| `pluginType`    |  `Type`  | 插件类                  |
-| `accessorAlias` | `string` | 插件类中 设置的访问器名 |
-
 ## 设置类生成配置
 
 使用 `ShadowSettingClass` 注解来对设置类进行一些配置
 
 参数说明:
 
-| 参数        |   类型   | 描述                 |
-| ----------- | :------: | -------------------- |
-| `container` | `string` | 设置所存储的容器名称 |
-| `alias`     | `string` | 设置类的类名         |
+| 参数        |   类型  | 默认值 | 描述                 |
+| ----------- | :------: |  :------: |-------------------- |
+| `Container` | `string` | 项目级别命名空间 | 设置所存储的容器名称 |
+| `ClassName`     | `string`|`Settings` | 设置类的类名         |
+| `PluginAccessorName` | `string`| `Settings`| 插件类中 设置的访问器名 |
 
 ## 示例
 
@@ -47,8 +37,8 @@ using ShadowPluginLoader.MetaAttributes;
 
 namespace ShadowExample.Plugin.Emoji;
 
-[ShadowPluginSettingClass(typeof(EmojiPlugin), "Setting")]
-[ShadowSettingClass("ShadowExample.Plugin.Emoji","EmojiSetting")]
+
+[ShadowSettingClass(Container = "ShadowExample.Plugin.Emoji", ClassName = "EmojiSetting")]
 public enum BikaConfigKey
 {
     [ShadowSetting(typeof(int), "1", "Api分流")]

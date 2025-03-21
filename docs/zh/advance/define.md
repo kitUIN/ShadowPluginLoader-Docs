@@ -7,38 +7,67 @@
 例如:
 ```json
 {
-  "Namespace": "ShadowViewer.Plugins",
-  "Type": "PluginMetaData",
+  "MetaDataType": "ShadowExample.Core.Plugins.ExampleMetaData",
   "Properties": {
+    "Authors": {
+      "Type": "System.String[]",
+      "Nullable": false,
+      "Required": false,
+      "PropertyGroupName": "Authors"
+    },
+    "Url": {
+      "Type": "System.String",
+      "Nullable": false,
+      "Required": false,
+      "PropertyGroupName": "Url"
+    },
+    "D": {
+      "Type": "System.Double",
+      "Nullable": false,
+      "Required": false,
+      "PropertyGroupName": "D"
+    },
+    "F": {
+      "Type": "System.Single[]",
+      "Nullable": false,
+      "Required": false,
+      "PropertyGroupName": "F"
+    },
     "Id": {
-      "Type": "string",
+      "Type": "System.String",
+      "Nullable": false,
+      "Required": true,
       "PropertyGroupName": "Id"
     },
     "Name": {
-      "Type": "string",
+      "Type": "System.String",
+      "Nullable": false,
+      "Required": true,
       "PropertyGroupName": "Name"
     },
+    "DllName": {
+      "Type": "System.String",
+      "Nullable": false,
+      "Required": false,
+      "PropertyGroupName": "DllName"
+    },
     "Version": {
-      "Type": "string",
-      "PropertyGroupName": "Version",
-      "Regex":"^[0-9]+\.[0-9]+\.[0-9]+$"
+      "Type": "System.String",
+      "Nullable": false,
+      "Required": true,
+      "PropertyGroupName": "Version"
     },
     "Dependencies": {
-      "Type": "string[]",
+      "Type": "System.String[]",
+      "Nullable": false,
+      "Required": true,
       "PropertyGroupName": "Dependencies"
     }
-  },
-  "Required": [
-    "Id",
-    "Name",
-    "Version",
-    "Dependencies"
-  ]
+  }
 }
 ```
 | 名称       |      类型       | 说明 |
 | ------------- | :-----------:  | ---- |
-| `Namespace`      | `string`  | 元数据类所在的命名空间 |
-| `Type`      |   `string`    |  元数据类名,[支持的元数据项类型](/zh/advance/meta#支持的元数据项类型) |
+| `MetaDataType`      |   `string`    |  元数据类名,[支持的元数据项类型](/zh/advance/meta#支持的元数据项类型) |
 | `Properties` |   `Object`     |  元数据项,具体可配置项可查阅[`[Meta]`特性](/zh/init/metaplugin.html#元数据项的额外配置) |
-| `Required` |   `string[]`    |  必须填写的元数据项 |
+

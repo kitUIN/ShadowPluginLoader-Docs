@@ -86,13 +86,13 @@
 
 插件主类需要继承插件加载器中的自定义的插件基类
 
-并且必须使用`[AutoPluginMeta]`特性自动生成元数据
+并且必须使用`[MainPlugin]`特性指明插件主类,这会自动生成对应的插件元信息
 
 ```csharp
 // 示例的插件主类
 namespace ShadowViewer.Plugin.Local;
 
-[AutoPluginMeta]
+[MainPlugin]
 public partial class LocalPlugin : PluginBase
 {
 }
@@ -105,7 +105,6 @@ using ShadowViewer.Plugins;
 
 namespace ShadowViewer.Plugin.Local
 {
-    [PluginMetaData(Id = "ShadowViewer.Plugin.Local", Name = "本地阅读插件", Version = "1.0.5.18")]
     public partial class LocalPlugin
     {
         /// <summary>
