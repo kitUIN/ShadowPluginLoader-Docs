@@ -83,6 +83,7 @@ export default defineConfig({
               { text: 'Tool.Config.props文件', link: 'toolconfig' },
               { text: '快速依赖注入', link: 'quickdi' },
               { text: '修补plugin.json', link: 'patchpluginjson' },
+              { text: '自动版本号', link: 'versiongen' },
             ]
           }
         ],
