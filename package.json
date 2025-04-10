@@ -6,9 +6,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.5.0"
+    "vitepress": "^1.6.3"
   },
   "dependencies": {
-    "markdown-it-mermaid": "^0.2.5"
+
   }
 }

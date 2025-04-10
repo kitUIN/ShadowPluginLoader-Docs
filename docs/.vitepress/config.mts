@@ -49,7 +49,7 @@ export default defineConfig({
             link: '/',
             base: '/zh/init/',
             items: [
-              { text: '创建项目', link: 'customloader' },
+              { text: '创建SDK项目', link: 'customloader' },
               { text: '创建插件元数据类', link: 'metaplugin' },
               { text: '创建插件基类', link: 'iplugin' },
               { text: '创建插件加载器类', link: 'customloaderclass' },
