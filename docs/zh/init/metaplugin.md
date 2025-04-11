@@ -56,7 +56,7 @@ internal interface IPluginMetaData
   /// <summary>加载优先值,越小越先加载</summary>
   int Priority { get; init; }
 
-  /// <summary>诸如点</summary>
+  /// <summary>注入点</summary>
   JsonNode? EntryPoints { get; init; }
 
   /// <summary>是否是内置插件</summary>
