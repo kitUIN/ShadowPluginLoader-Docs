@@ -44,7 +44,7 @@ public partial class TitleBarViewModel
 
 ## [CheckAutowired]
 
-该特性针对属性类
+该特性针对类
 
 将自动检测当前类是否需要依赖注入构造函数, 如果需要则直接进行构建
 ```csharp

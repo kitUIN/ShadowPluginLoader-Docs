@@ -2,18 +2,24 @@
 
 ## 安装
 
-提供了多种方式进行安装
+需要先初始化加载器,扫描插件,最后再加载
 
-- `ImportFromZipAsync(string path)` 从zip进行加载
-  - 支持本地zip路径
-  - 支持网络zip路径(自动下载)
-- `ImportFromDirAsync(string zipPath)` 加载文件夹内所有插件
-- 加载单个插件
-  - `Import(Type)`
-  - `Import<TPlugin>()`
-- `Import(IEnumerable<Type>)` 加载多个插件
+### 初始化
 
-程序启动时推荐使用`ImportFromDirAsync`一次性加载所有插件,内置插件可以通过`Import<TPlugin>()`直接加载,运行时安装插件建议使用`ImportFromZipAsync(string)` 
+- 调用`CheckUpgradeAndRemoveAsync()`
+
+### 扫描
+
+- Scan(Type 插件类型)
+- Scan<TPlugin>()
+- Scan(IEnumerable<Type> 插件类型列表)
+- Scan(DirectoryInfo 文件夹) 
+- Scan(FileInfo plguin.json文件)
+- ScanAsync(string zip本地路径/网络路径)
+
+### 加载
+
+- 调用`Load()`
 
 ## 更新
 

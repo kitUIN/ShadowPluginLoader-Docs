@@ -6,9 +6,11 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.3"
+    "vitepress": "^2.0.0-alpha.4"
   },
   "dependencies": {
-
+    "mermaid": "^11.6.0",
+    "vitepress-plugin-group-icons": "^1.4.1",
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }

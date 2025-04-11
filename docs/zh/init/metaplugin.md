@@ -1,14 +1,14 @@
 # 创建插件元数据类
 
-```csharp
+```csharp [ExampleMetaData.cs]
 // 示例代码
-using ShadowPluginLoader.MetaAttributes;
+using ShadowPluginLoader.Attributes;
 using ShadowPluginLoader.WinUI.Models;
 
 namespace ShadowExample.Core.Plugins;
 
 [ExportMeta]
-public class ExampleMetaData : AbstractPluginMetaData
+public record ExampleMetaData : AbstractPluginMetaData
 {
     [Meta(Required = true, PropertyGroupName = "Author")]
     public string Author { get; init; }
@@ -34,12 +34,37 @@ public class ExampleMetaData : AbstractPluginMetaData
 你的元数据类**必须**继承`AbstractPluginMetaData`
   
 `AbstractPluginMetaData`是默认的插件元数据,包含以下内容:
-- `Id`:插件Id
-- `Name`:插件名称
-- `Version`:插件版本
-- `Dependencies`:插件依赖
 
-所以以上四个你不需要设置
+```csharp [IPluginMetaData.cs]
+internal interface IPluginMetaData
+{
+  /// <summary>插件ID</summary>
+  string Id { get; init; }
+
+  /// <summary>插件名称</summary>
+  string Name { get; init; }
+
+  /// <summary>插件DLL名称</summary>
+  string DllName { get; init; }
+
+  /// <summary>插件版本号</summary>
+  string Version { get; init; }
+
+  /// <summary>插件依赖</summary>
+  string[] Dependencies { get; init; }
+
+  /// <summary>加载优先值,越小越先加载</summary>
+  int Priority { get; init; }
+
+  /// <summary>诸如点</summary>
+  JsonNode? EntryPoints { get; init; }
+
+  /// <summary>是否是内置插件</summary>
+  bool BuiltIn { get; init; }
+}
+```
+
+所以以上的你不需要设置,会自动继承
 
 ## 额外的元数据项
 
@@ -71,6 +96,7 @@ public string Author { get; init; }
 | `Exclude`      |   `bool`   |   `false` | 是否忽略该属性,忽略后该属性不会被导出到define文件中 |
 | `Regex` |   `string?`    |    `null` |  正则表达式,用于匹配该属性的值 |
 | `PropertyGroupName` |   `string`    | 属性名称 |  元数据的对应的`MSBuild`名称,大小写敏感 |
+| `EntryPointName` |   `string`    | 注入点名称 |  用于导入注入点,并且类型固定为`Type`或者`Type[]` |
 | ~~`Nullable`~~ |   ~~`bool`~~    |   ~~`false`~~ |  ~~是否允许该属性为`null`~~ 通过类名是否有问号自动判断 |
 
 

@@ -18,7 +18,7 @@
 
 ```csharp
 using CustomExtensions.WinUI;
-public void test()
+public void Test()
 {
     string originPath =  "ms-plugin://ShadowViewer.Plugin.Bika/Themes/BikaTheme.xaml"
     string realPath = originPath.PluginPath();
@@ -31,7 +31,7 @@ public void test()
 
 这里提供三种 Converter
 
-```xml
+```xml [App.xaml]
 <!-- xmlns:cw="using:CustomExtensions.WinUI" -->
 <cw:PluginPathConverter x:Key="PluginPathConverter" />
 <cw:PluginUriConverter x:Key="PluginUriConverter" />

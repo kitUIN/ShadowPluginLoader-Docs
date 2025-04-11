@@ -6,15 +6,16 @@
 
 ## 编写默认元数据
 
-默认提供了四个元数据项
+默认提供了五个可填写的元数据项
 - `Id`:插件Id
 - `Name`:插件名称
 - `Version`:插件版本
+- `Priority `:加载顺序,越小越早加载
 - `Dependencies`:插件依赖
 
 元数据项(除了`Dependencies`)均在`<PropertyGroup>`的`<PluginMeta>`中设置
 
-```xml
+```xml [ShadowExample.Plugin.Emoji.csproj]
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -27,13 +28,13 @@
         <!-- Nuget -->
         <PackageId>ShadowExample.Plugin.Emoji</PackageId>
         <Version>1.0.0.12</Version>
-        <!-- PluginMeta --> // [!code ++]
-        <PluginMeta> // [!code ++]
-            <!-- 使用上文的PackageId变量 --> // [!code ++]
-            <Id>$(PackageId)</Id> // [!code ++]
-            <Name>emoji</Name> // [!code ++]
-            <Version>$(Version)</Version> // [!code ++]
-        </PluginMeta> // [!code ++]
+        <!-- PluginMeta --> <!-- [!code ++] -->
+        <PluginMeta> <!-- [!code ++] -->
+            <!-- 使用上文的PackageId变量 --> <!-- [!code ++] -->
+            <Id>$(PackageId)</Id> <!-- [!code ++] -->
+            <Name>emoji</Name> <!-- [!code ++] -->
+            <Version>$(Version)</Version> <!-- [!code ++] -->
+        </PluginMeta> <!-- [!code ++] -->
     </PropertyGroup>
 </Project>
 ```
@@ -43,6 +44,7 @@
 - [MSBuild 保留属性和已知属性](https://learn.microsoft.com/zh-cn/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022)
 - [常用的 MSBuild 项目属性](https://learn.microsoft.com/zh-cn/visualstudio/msbuild/common-msbuild-project-properties?view=vs-2022)
 :::
+
 元数据项`Dependencies`用于指明插件的`依赖插件`,让插件在`依赖插件`加载后再加载
 
 与常规元数据项不同,需要在`.csproj`中的`<ItemGroup>`里设置
@@ -50,14 +52,15 @@
 同时他作为项目的`nuget`包
 
 必须指明`Label="Dependencies"`
-```xml
+```xml [ShadowExample.Plugin.Emoji.csproj]
 <ItemGroup Label="Dependencies">
     <PackageReference Include="ShadowExample.Plugin.Hello" Version="1.2.1.2" />
     <PackageReference Include="ShadowExample.Plugin.World" Version="1.3.0.0" />
 </ItemGroup>
 ```
-## 编写数组形式的元数据项
+## 编写特殊形式的元数据项
 
+### 数组类型
 有一些元数据项的类型为数组,例如:`string[]`
 
 此时我们需要一些特殊格式进行编写
@@ -73,7 +76,17 @@
         <Item>Hello</Item> 
     </Authors>
   ```
-
+ - 自定义类型
+  ```xml
+    <Tags>
+        <ShadowTag>
+          <Name>Bika</Name>
+        </ShadowTag>
+        <ShadowTag>
+          <Name>Local</Name>
+        </ShadowTag>
+    </Tags>
+  ```
 ## 编写更多元数据项
 
 在你的插件加载器中应当设置了自己的元数据项
@@ -88,7 +101,7 @@
 
 并且必须使用`[MainPlugin]`特性指明插件主类,这会自动生成对应的插件元信息
 
-```csharp
+```csharp [LocalPlugin.cs]
 // 示例的插件主类
 namespace ShadowViewer.Plugin.Local;
 
@@ -98,8 +111,7 @@ public partial class LocalPlugin : PluginBase
 }
 ```
 
-```csharp
-// 自动生成的LocalPlugin.g.cs
+```csharp [LocalPlugin.g.cs]
 // Automatic Generate From ShadowPluginLoader.SourceGenerator
 using ShadowViewer.Plugins;
 

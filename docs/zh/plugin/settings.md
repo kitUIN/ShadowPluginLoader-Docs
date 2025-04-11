@@ -32,7 +32,7 @@
 
 ## 示例
 
-```csharp
+```csharp [BikaConfigKey.cs]
 using ShadowPluginLoader.MetaAttributes;
 
 namespace ShadowExample.Plugin.Emoji;
@@ -54,8 +54,7 @@ public enum BikaConfigKey
 
 自动生成的文件如下:
 
-```csharp
-// EmojiSetting.g.cs
+```csharp [EmojiSetting.g.cs]
 // Automatic Generate From ShadowPluginLoader.SourceGenerator
 using ShadowPluginLoader.WinUI.Helpers;
 
@@ -118,8 +117,7 @@ public partial class EmojiSetting
 
 ```
 
-```csharp
-// EmojiPlugin_Settings.g.cs
+```csharp [EmojiPlugin_Settings.g.cs]
 // Automatic Generate From ShadowPluginLoader.SourceGenerator
 
 namespace ShadowExample.Plugin.Emoji;

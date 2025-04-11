@@ -7,7 +7,7 @@
 :::
 
 
-```csharp
+```csharp [PluginBase.cs]
 // 示例代码
 using ShadowPluginLoader.WinUI;
 

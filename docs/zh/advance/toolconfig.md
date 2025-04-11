@@ -48,9 +48,4 @@
 - 从`.csproj`文件中自动生成出`plugin.json`
 - 允许使用[插件打包](/zh/plugin/pack)功能
 
-## BuiltInPlugin
 
-`BuiltIn`指明该项目是否是内置插件项目
-
-内置插件:
-- 直接以项目依赖,一同打包进主项目中的插件

@@ -7,7 +7,7 @@
 例如:
 ```json
 {
-  "MetaDataType": "ShadowExample.Core.Plugins.ExampleMetaData",
+  "Type": "ShadowExample.Core.Plugins.ExampleMetaData",
   "Properties": {
     "Authors": {
       "Type": "System.String[]",
@@ -68,6 +68,6 @@
 ```
 | 名称       |      类型       | 说明 |
 | ------------- | :-----------:  | ---- |
-| `MetaDataType`      |   `string`    |  元数据类名,[支持的元数据项类型](/zh/advance/meta#支持的元数据项类型) |
+| `Type`      |   `string`    |  元数据类名,[支持的元数据项类型](/zh/advance/meta#支持的元数据项类型) |
 | `Properties` |   `Object`     |  元数据项,具体可配置项可查阅[`[Meta]`特性](/zh/init/metaplugin.html#元数据项的额外配置) |
 

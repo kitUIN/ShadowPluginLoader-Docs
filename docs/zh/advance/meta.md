@@ -23,13 +23,37 @@
 | `float`      | `float?` | `float[]` | 
 | `double`      | `double?` | `double[]` | 
 | `decimal`      | `decimal?` | `decimal[]` | 
+| `Type` | `Type?` | `Type[]`|
+| `DateTime` | `DateTime?` | `DateTime[]`|
+| `DateTimeOffset` | `DateTimeOffset?` | `DateTimeOffset[]`|
+| `TimeSpan` | `TimeSpan?` | `TimeSpan[]`|
+| `Guid` | `Guid?` | `Guid[]`|
+| `Byte` | `Byte?` | `Byte[]`|
+
+
+### 日期类特殊支持
+
+日期类除了使用`[Meta]`,还可以使用`[MetaDateTime]`特性定义
+
+```csharp
+    [MetaDateTime(Format = "yyyy-MM-dd HH:mm:ss", InvariantCulture = false)]
+    public DateTime TestDateTime { get; init; }
+```
+
+| 可配置项       |      类型      |  默认值 | 说明 |
+| ------------- | :-----------: | ---- | ---- |
+| `Format`      | `string?` | `null` | 格式化 |
+| `InvariantCulture`      |   `bool`   |   `true` | 是否使用InvariantCulture,为false将使用CurrentCulture |
 
 ### 自定义类型
 
 将会读取类的所有属性,可以使用`[Meta]`特性自定义
 
+暂时不支持复杂泛型
+
 ```csharp
-public class ShadowTag : IShadowTag
+    // 自定义类型示例
+    public class ShadowTag : IShadowTag
     {
         /// <summary>
         /// <inheritdoc />

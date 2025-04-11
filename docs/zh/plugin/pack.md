@@ -10,10 +10,10 @@
     <PropertyGroup>
         <!-- Whether the current project is a PluginLoader -->
         <IsPluginLoader>false</IsPluginLoader>
-        <!-- Whether the current project is a Plugin -->
-        <IsPlugin>true</IsPlugin> // [!code focus]
-        <!-- Auto Pack Plugin When IsPlugin == True-->
-        <AutoPluginPackage>true</AutoPluginPackage> // [!code focus]
+        <!-- Whether the current project is a Plugin --> <!-- [!code focus] -->
+        <IsPlugin>true</IsPlugin> <!-- [!code focus] -->
+        <!-- Auto Pack Plugin When IsPlugin == True--> <!-- [!code focus] -->
+        <AutoPluginPackage>true</AutoPluginPackage> <!-- [!code focus] -->
         <!-- Auto Generate I18N -->
         <AutoGenerateI18N>true</AutoGenerateI18N>
     </PropertyGroup>

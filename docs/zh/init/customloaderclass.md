@@ -8,7 +8,7 @@
 
 ## 创建插件加载器类
 
-```csharp
+```csharp [ShadowExamplePluginLoader.cs]
 using System;
 using Serilog;
 using ShadowExample.Core.Plugins;
@@ -45,7 +45,7 @@ namespace ShadowExample.Core
 
 以下是一个简单示例,更多请查阅`DryIoc`文档:
 
-```csharp
+```csharp [DiHelper.cs]
 using System;
 using SqlSugar;
 
@@ -68,9 +68,9 @@ public static class DiHelper
 
 ## 在主项目中使用
 
-在`App.cs`文件中需要初始化
+在`App.xaml.cs`文件中需要初始化
 
-```csharp
+```csharp [App.xaml.cs]
 public App()
 {
     this.InitializeComponent();
