@@ -8,18 +8,18 @@ hero:
   tagline: WinUI3 Plugin Loader
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Quick Start
+      link: /zh/init/
     - theme: alt
-      text: API Examples
+      text: Examples
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: WinUI3
+    details: Use plugins in WinUI3
+  - title: XAML Controls
+    details: Supports loading XAML controls from plugins
+  - title: Full Toolchain
+    details: Quickly, conveniently, and efficiently build your own plugin loader
 ---
 
