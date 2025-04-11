@@ -10,12 +10,12 @@
 
 ### 扫描
 
-- Scan(Type 插件类型)
-- Scan<TPlugin>()
-- Scan(IEnumerable<Type> 插件类型列表)
-- Scan(DirectoryInfo 文件夹) 
-- Scan(FileInfo plguin.json文件)
-- ScanAsync(string zip本地路径/网络路径)
+- `Scan(Type 插件类型)`
+- `Scan<TPlugin>()`
+- `Scan(IEnumerable<Type> 插件类型列表)`
+- `Scan(DirectoryInfo 文件夹) `
+- `Scan(FileInfo plguin.json文件)`
+- `ScanAsync(string zip本地路径/网络路径)`
 
 ### 加载
 
